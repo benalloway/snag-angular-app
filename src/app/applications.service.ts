@@ -1,12 +1,28 @@
 import { Injectable } from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+import { environment } from 'src/environments/environment';
+import { Observable } from 'rxjs';
 
-@Injectable({
-  providedIn: 'root'
-})
+export interface Application {
+  id: string,
+  name: string,
+  qualified: boolean,
+  questions: object,
+  email: string,
+  job_listing_id: {title: string}
+}
+
+@Injectable()
 export class ApplicationsService {
+  API_URL;
+
   getQualifiedApplications() {
-    const applications = [{name: 'Benjamin', job_listing_id: {title: "Delivery Driver"}}, {name: 'Daniel', job_listing_id: {title: "Delivery Driver"}}];
-    return applications;
+    return this.http.get(`${this.API_URL}/api/applications`, {headers: {
+      'Content-Type':  'application/json',
+    }, observe: 'body', responseType: 'json'})
   }
-  constructor() { }
+
+  constructor(private http: HttpClient) { 
+    this.API_URL = environment.API_URL ?? ""
+  }
 }

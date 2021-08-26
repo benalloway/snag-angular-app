@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  API_URL:'https://snag-application-api.onrender.com'
 };
