@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApplicationsService } from './applications.service';
 
 @Component({
   selector: 'app-applications-list',
@@ -6,9 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./applications-list.component.sass']
 })
 export class ApplicationsListComponent implements OnInit {
-  applications = [{name: 'Benjamin', job_listing_id: {title: "Delivery Driver"}}, {name: 'Daniel', job_listing_id: {title: "Delivery Driver"}}]
-
-  constructor() { }
+  applications;
+  
+  constructor(service: ApplicationsService) {
+    this.applications = service.getQualifiedApplications()
+   }
 
   ngOnInit(): void {
   }
