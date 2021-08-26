@@ -1,1 +1,46 @@
-<p>applications-form works!</p>
+<h2>Submit an application:</h2>
+
+<form class="mb-5 d-grid gap-2" [formGroup]="applicationForm" (ngSubmit)='handleSubmit($event)'>
+  <div class="form-group">
+    <label for="name">Full Name</label>
+    <input formControlName="name" required id="name" name="name" type="text" class="form-control" />
+  </div>
+  
+  <div class="form-group">
+    <label for="ownCar">Do you own a car?</label>
+    <select formControlName="ownCar" required name="ownCar" id="ownCar" class="form-control">
+        <option value="">Select One</option>
+        <option value={true}>Yes</option>
+        <option value={false}>No</option>
+    </select>
+  </div>
+  
+  <div class="form-group">
+    <label for="validLicense">Do you have a drivers license?</label>
+    <select formControlName="validLicense" required name="validLicense" id="validLicense" class="form-control">
+        <option value="">Select One</option>
+        <option value={true}>Yes</option>
+        <option value={false}>No</option>
+    </select>
+  </div>
+  
+  <div class="form-group">
+    <label for="willingToDrive">Are you willing to drive over 1k miles monthly?</label>
+    <select formControlName="willingToDrive" required name="willingToDrive" id="willingToDrive" class="form-control">
+        <option value="">Select One</option>
+        <option value={true}>Yes</option>
+        <option value={false}>No</option>
+    </select>
+  </div>
+  
+  <div class="form-group">
+    <label for="dui">Have you ever had a DUI?</label>
+    <select formControlName="dui" required name="dui" id="dui" class="form-control">
+        <option value="">Select One</option>
+        <option value={true}>Yes</option>
+        <option value={false}>No</option>
+    </select>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Let's talk</button>
+</form>
