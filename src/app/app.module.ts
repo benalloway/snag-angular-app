@@ -3,12 +3,14 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ApplicationFormComponent } from './application-form.component';
+import { ApplicationsListComponent } from './applications-list/applications-list.component';
+import { ApplicationsFormComponent } from './applications-form/applications-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ApplicationFormComponent
+    ApplicationsListComponent,
+    ApplicationsFormComponent
   ],
   imports: [
     BrowserModule,
