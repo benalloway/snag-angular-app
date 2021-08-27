@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ApplicationsService } from '../applications.service';
 
 @Component({
@@ -30,10 +31,11 @@ export class ApplicationsFormComponent implements OnInit {
       ]
     };
     this.service.postApplication(payload)
+    this.router.navigate(['/'])
   }
 
 
-  constructor(private service: ApplicationsService) {
+  constructor(private service: ApplicationsService, private router: Router) {
     
   }
 
