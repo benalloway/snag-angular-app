@@ -8,7 +8,7 @@
         <div class="col-lg-4 col-md-12 mb-4">
   
           <div class="text-center">
-            <h2 class="h1 mb-0">{{rejectedApplications?.length + acceptedApplications?.length}}</h2>
+            <h2 class="h1 mb-0">{{rejectedApplications?.length + acceptedApplications?.length ?? 0}}</h2>
             <p><strong>Total Applications</strong></p>
           </div>
   
@@ -19,7 +19,7 @@
         <div class="col-lg-4 col-md-6 mb-4">
   
           <div class="text-center">
-            <h2 class="h1 mb-0">{{acceptedApplications?.length}}</h2>
+            <h2 class="h1 mb-0">{{acceptedApplications?.length ?? 0}}</h2>
             <p><strong>Accepted Applications</strong></p>
           </div>
   
@@ -30,7 +30,7 @@
         <div class="col-lg-4 col-md-6 mb-4">
   
           <div class="text-center">
-            <h2 class="h1 mb-0">{{rejectedApplications?.length}}</h2>
+            <h2 class="h1 mb-0">{{rejectedApplications?.length ?? 0}}</h2>
             <p><strong>Rejected Applications</strong></p>
           </div>
   
