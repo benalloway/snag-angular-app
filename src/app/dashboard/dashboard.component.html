@@ -1,1 +1,40 @@
-<p>dashboard works!</p>
+<div class="text-center">
+    <h2 class="my-5 h2">Dashboard</h2>
+  </div>
+    <!--Grid row-->
+    <div class="row">
+
+        <!--Grid column-->
+        <div class="col-lg-4 col-md-12 mb-4">
+  
+          <div class="text-center">
+            <h2 class="h1 mb-0">{{rejectedApplications?.length + acceptedApplications?.length}}</h2>
+            <p><strong>Total Applications</strong></p>
+          </div>
+  
+        </div>
+        <!--Grid column-->
+  
+        <!--Grid column-->
+        <div class="col-lg-4 col-md-6 mb-4">
+  
+          <div class="text-center">
+            <h2 class="h1 mb-0">{{acceptedApplications?.length}}</h2>
+            <p><strong>Accepted Applications</strong></p>
+          </div>
+  
+        </div>
+        <!--Grid column-->
+  
+        <!--Grid column-->
+        <div class="col-lg-4 col-md-6 mb-4">
+  
+          <div class="text-center">
+            <h2 class="h1 mb-0">{{rejectedApplications?.length}}</h2>
+            <p><strong>Rejected Applications</strong></p>
+          </div>
+  
+        </div>
+        <!--Grid column-->
+  
+      </div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApplicationsService } from '../applications.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -6,10 +7,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard.component.sass']
 })
 export class DashboardComponent implements OnInit {
+  acceptedApplications: any;
+  rejectedApplications: any;
 
-  constructor() { }
+  constructor(private service: ApplicationsService) {
+    this.service.getQualifiedApplications().subscribe(response => {
+      this.acceptedApplications = response;
+    })
+    
+    this.service.getRejectedApplications().subscribe(response => {
+      this.rejectedApplications = response;
+    })
+    
+  }
 
   ngOnInit(): void {
+    console.log("Rejected Apps: ", this.rejectedApplications)
+    console.log("Accepted Apps: ", this.acceptedApplications)
   }
 
 }
