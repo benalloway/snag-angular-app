@@ -14,8 +14,8 @@ export interface Application {
 
 export interface JobApplicationForm {
   name: string,
-  email: string | undefined, 
-  job_listing_id: string | undefined,
+  email?: string | undefined, 
+  job_listing_id?: string | undefined,
   questions: Array<{ Id: string, Question: string, Answer: boolean }>
 }
 

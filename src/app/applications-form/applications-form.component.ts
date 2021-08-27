@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { ApplicationsService } from '../applications.service';
 
 @Component({
   selector: 'app-applications-form',
@@ -17,14 +18,27 @@ export class ApplicationsFormComponent implements OnInit {
 
   handleSubmit($event: any) {
     $event.preventDefault();
-    console.log(this.applicationForm.value);
+    const formValues = this.applicationForm.value;
+    // {name: "string", ownCar: "true"}
+    const payload = {
+      name: formValues.name,
+      questions: [
+        {Id: '1', Question: "Do you own a car?", Answer: formValues.ownCar === 'true' ? true : false},
+        {Id: '2', Question: "Do you have a valid license?", Answer: formValues.validLicense === 'true' ? true : false},
+        {Id: '3', Question: "Have you ever had a DUI?", Answer: formValues.dui === 'true' ? true : false},
+        {Id: '4', Question: "Are you willing to drive over 1k miles a month?", Answer: formValues.willingToDrive === 'true' ? true : false}
+      ]
+    };
+    this.service.postApplication(payload)
   }
 
   // log(x: any){
   //   console.log(x)
   // }
 
-  constructor() {}
+  constructor(private service: ApplicationsService) {
+    
+  }
 
   ngOnInit(): void {}
 }
