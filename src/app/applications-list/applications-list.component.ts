@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ApplicationsService, Application } from '../applications.service';
+import { ApplicationsService } from '../applications.service';
 
 @Component({
   selector: 'app-applications-list',
@@ -10,13 +10,11 @@ export class ApplicationsListComponent implements OnInit {
   applications: any;
   
   constructor(private service: ApplicationsService) {
-    this.service.getQualifiedApplications().subscribe(response => {
+    this.service.getAcceptedApplications().subscribe(response => {
       this.applications = response;
     })
-    
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
 }

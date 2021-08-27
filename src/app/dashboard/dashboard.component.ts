@@ -11,19 +11,15 @@ export class DashboardComponent implements OnInit {
   rejectedApplications: any;
 
   constructor(private service: ApplicationsService) {
-    this.service.getQualifiedApplications().subscribe(response => {
+    this.service.getAcceptedApplications().subscribe(response => {
       this.acceptedApplications = response;
     })
     
     this.service.getRejectedApplications().subscribe(response => {
       this.rejectedApplications = response;
-    })
-    
+    }) 
   }
 
-  ngOnInit(): void {
-    console.log("Rejected Apps: ", this.rejectedApplications)
-    console.log("Accepted Apps: ", this.acceptedApplications)
-  }
+  ngOnInit(): void {}
 
 }

@@ -1,9 +1,7 @@
 <div class="text-center">
-    <h2 class="my-5 h2">Qualified Applications</h2>
-  </div>
+    <h2 class="my-5 h2">Accepted Applications</h2>
+</div>
 
 <ul class="list-group">
     <li class="list-group-item py-3 px-5" *ngFor="let application of applications">{{application.name}} applied for the {{application.job_listing_id.title}} job</li>
 </ul>
-
-<!-- <button (click)="getData()" class="btn btn-primary">Click me</button> -->

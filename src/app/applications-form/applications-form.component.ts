@@ -35,9 +35,7 @@ export class ApplicationsFormComponent implements OnInit {
   }
 
 
-  constructor(private service: ApplicationsService, private router: Router) {
-    
-  }
+  constructor(private service: ApplicationsService, private router: Router) {}
 
   ngOnInit(): void {}
 }
