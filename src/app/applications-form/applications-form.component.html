@@ -42,5 +42,5 @@
     </select>
   </div>
 
-  <button type="submit" class="btn btn-primary">Let's talk</button>
+  <button type="submit" [disabled]="!applicationForm.valid" class="btn btn-primary">Let's talk</button>
 </form>

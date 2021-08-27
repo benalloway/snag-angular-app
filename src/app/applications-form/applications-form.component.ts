@@ -19,7 +19,7 @@ export class ApplicationsFormComponent implements OnInit {
   handleSubmit($event: any) {
     $event.preventDefault();
     const formValues = this.applicationForm.value;
-    // {name: "string", ownCar: "true"}
+
     const payload = {
       name: formValues.name,
       questions: [
@@ -32,9 +32,6 @@ export class ApplicationsFormComponent implements OnInit {
     this.service.postApplication(payload)
   }
 
-  // log(x: any){
-  //   console.log(x)
-  // }
 
   constructor(private service: ApplicationsService) {
     
