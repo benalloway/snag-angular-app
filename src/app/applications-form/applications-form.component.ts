@@ -19,6 +19,7 @@ export class ApplicationsFormComponent implements OnInit {
 
   handleSubmit($event: any) {
     $event.preventDefault();
+    this.applicationForm.markAsPending()
     const formValues = this.applicationForm.value;
 
     const payload: JobApplicationForm = {
@@ -30,9 +31,7 @@ export class ApplicationsFormComponent implements OnInit {
         {Id: '4', Question: "Are you willing to drive over 1k miles a month?", Answer: formValues.willingToDrive === 'true' ? true : false}
       ]
     };
-    this.service.postApplication(payload)
-    this.applicationForm.markAsPending()
-    setTimeout( () => this.router.navigate(['/']), 300)
+    this.service.postApplication(payload).finally(() => this.router.navigate(['/']))
   }
 
 
