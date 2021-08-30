@@ -25,7 +25,7 @@ export class ApplicationsService {
     }, observe: 'body', responseType: 'json'})
   }
 
-  postApplication(payload: JobApplicationForm) {
+  async postApplication(payload: JobApplicationForm) {
     this.http.post(`${this.API_URL}/api/applications`, JSON.stringify(payload), {headers:{'Content-Type': 'application/json'}})
       .subscribe(response => {
         console.log(response)

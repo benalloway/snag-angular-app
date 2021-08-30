@@ -31,7 +31,8 @@ export class ApplicationsFormComponent implements OnInit {
       ]
     };
     this.service.postApplication(payload)
-    this.router.navigate(['/'])
+    this.applicationForm.markAsPending()
+    setTimeout( () => this.router.navigate(['/']), 300)
   }
 
 

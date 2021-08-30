@@ -45,5 +45,9 @@
     </select>
   </div>
 
-  <button type="submit" [disabled]="!applicationForm.valid" class="btn btn-primary">Let's talk</button>
+    <button type="submit" [disabled]="!applicationForm.valid" class="btn btn-primary">
+      <span *ngIf="applicationForm.pending" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+      <span *ngIf="!applicationForm.pending">Submit</span>
+      <span *ngIf="applicationForm.pending" class="px-1">Submitting...</span>
+    </button>
 </form>
