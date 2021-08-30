@@ -2,19 +2,10 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 
-export interface Application {
-  id: string,
-  name: string,
-  qualified: boolean,
-  questions: object,
-  email: string,
-  job_listing_id: {title: string}
-}
-
 export interface JobApplicationForm {
   name: string,
-  email?: string | undefined, 
-  job_listing_id?: string | undefined,
+  email?: string, 
+  job_listing_id?: string,
   questions: Array<{ Id: string, Question: string, Answer: boolean }>
 }
 

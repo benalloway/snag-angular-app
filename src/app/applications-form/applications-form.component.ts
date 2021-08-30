@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
-import { ApplicationsService } from '../applications.service';
+import { ApplicationsService, JobApplicationForm } from '../applications.service';
 
 @Component({
   selector: 'app-applications-form',
@@ -21,7 +21,7 @@ export class ApplicationsFormComponent implements OnInit {
     $event.preventDefault();
     const formValues = this.applicationForm.value;
 
-    const payload = {
+    const payload: JobApplicationForm = {
       name: formValues.name,
       questions: [
         {Id: '1', Question: "Do you own a car?", Answer: formValues.ownCar === 'true' ? true : false},
